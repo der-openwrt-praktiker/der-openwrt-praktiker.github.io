@@ -1,0 +1,41 @@
+!
+debug ospf6 lsa unknown
+!
+password zebra
+!
+interface eth0
+ ipv6 ospf6 passive
+ ipv6 ospf6 network broadcast
+!
+interface eth1
+ ipv6 ospf6 passive
+ ipv6 ospf6 network broadcast
+!
+interface eth2
+ bandwidth 155000
+ ipv6 ospf6 priority 5
+ ipv6 ospf6 network broadcast
+!
+interface lo
+!
+router ospf
+ ospf router-id 3.3.3.3
+ network 10.3.1.0/24 area 0.0.0.3
+ network 203.0.113.0/24 area 0.0.0.0
+ area 0.0.0.3 range 10.3.0.0/16
+!
+router ospf6
+ router-id 3.3.3.3
+ interface eth2 area 0.0.0.0
+ interface eth1 area 0.0.0.3
+!
+access-list vty permit 127.0.0.0/8
+access-list vty deny any
+!
+ip forwarding
+ipv6 forwarding
+!
+line vty
+ access-class vty
+!
+end

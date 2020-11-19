@@ -1,0 +1,408 @@
+root@labsrv:~# ansible-playbook playbook.yml
+
+PLAY [openwisp2] *******************************************************************************************
+
+TASK [Gathering Facts] *************************************************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : include_tasks] **********************************************************************
+included: /root/.ansible/roles/Stouts.postfix/tasks/postfix.yml for openwisp2.openwrt.lab
+
+TASK [Stouts.postfix : Install requirements (Debian)] ******************************************************
+[DEPRECATION WARNING]: Invoking "apt" only once while using a loop via squash_actions is deprecated.
+Instead of using a loop to supply multiple items and specifying `name: "{{item}}"`, please use `name:
+['postfix', 'ca-certificates', 'mailutils', 'libsasl2-modules']` and remove the loop. This feature will be
+removed in version 2.11. Deprecation warnings can be disabled by setting deprecation_warnings=False in
+ansible.cfg.
+changed: [openwisp2.openwrt.lab] => (item=['postfix', 'ca-certificates', 'mailutils', 'libsasl2-modules'])
+
+TASK [Stouts.postfix : Install DKIM requirements (Debian)] *************************************************
+[DEPRECATION WARNING]: Invoking "apt" only once while using a loop via squash_actions is deprecated.
+Instead of using a loop to supply multiple items and specifying `name: "{{item}}"`, please use `name:
+['opendkim', 'opendkim-tools']` and remove the loop. This feature will be removed in version 2.11.
+Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+skipping: [openwisp2.openwrt.lab] => (item=[])
+
+TASK [Stouts.postfix : Install postfix-pcre] ***************************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Install requirements (RedHat)] ******************************************************
+skipping: [openwisp2.openwrt.lab] => (item=postfix)
+skipping: [openwisp2.openwrt.lab] => (item=ca-certificates)
+skipping: [openwisp2.openwrt.lab] => (item=mailx)
+skipping: [openwisp2.openwrt.lab] => (item=libselinux-python)
+
+TASK [Stouts.postfix : Install DKIM requirements (RedHat)] *************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : create self-signed SSL cert] ********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : set permissions for self-signed SSL cert] *******************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : set permissions for self-signed SSL key] ********************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Create DKIM directories] ************************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Create DKIM directories] ************************************************************
+skipping: [openwisp2.openwrt.lab] => (item=openwisp2.openwrt.lab)
+
+TASK [Stouts.postfix : Generate DKIM key] ******************************************************************
+skipping: [openwisp2.openwrt.lab] => (item=openwisp2.openwrt.lab)
+
+TASK [Stouts.postfix : Change DKIM key permissions] ********************************************************
+skipping: [openwisp2.openwrt.lab] => (item=openwisp2.openwrt.lab)
+
+TASK [Stouts.postfix : Configure opendkim pt. 1] ***********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure opendkim pt. 2] ***********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure opendkim pt. 3] ***********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure opendkim pt. 4] ***********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure opendkim pt. 5] ***********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Ensure /etc/postfix directory is owned by root user] ********************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure postfix pt. 1] ************************************************************
+changed: [openwisp2.openwrt.lab] => (item=main.cf)
+changed: [openwisp2.openwrt.lab] => (item=master.cf)
+
+TASK [Stouts.postfix : Configure postfix pt. 2] ************************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure postfix pt. 3] ************************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure postfix pt. 4] ************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure postfix pt. 5] ************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure postfix pt. 6] ************************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure postfix local user relay] *************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure postfix sender canonical maps] ********************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure SystemD] ******************************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Ensure Postfix service is enabled (systemd)] ****************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Ensure Postfix is started] **********************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Set supervisor path (Debian)] ***************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Set www user (Debian)] **********************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Set spatialite_path (Ubuntu >= 18.04 or Debian >= 10)] **************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Update APT package cache] *******************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install system packages] ********************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : set redis to listen on ipv4] ****************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install spatialite] *************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install mod-spatialite (may fail on older linux distros)] ***********************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install acl if acting as non-root user] *****************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : ensure supervisor is started] ***************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install python2 packages] *******************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install python3 packages] *******************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install python wheel (optional, allowed to fail)] *******************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install python3-virtualenv] *****************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install ntp] ********************************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Remove jsonfield2] **************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Set openwisp2_python_packages] **************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Set custom package list] ********************************************************
+skipping: [openwisp2.openwrt.lab] => (item=False)
+skipping: [openwisp2.openwrt.lab] => (item=False)
+skipping: [openwisp2.openwrt.lab] => (item=False)
+skipping: [openwisp2.openwrt.lab] => (item=False)
+skipping: [openwisp2.openwrt.lab] => (item=False)
+skipping: [openwisp2.openwrt.lab] => (item=False)
+skipping: [openwisp2.openwrt.lab] => (item=False)
+
+TASK [openwisp.openwisp2 : Add network_topology to custom package list if set and enabled] *****************
+skipping: [openwisp2.openwrt.lab] => (item=False)
+
+TASK [openwisp.openwisp2 : Update pip & related tools] *****************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install cryptography from pip] **************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install openwisp2 controller and its dependencies] ******************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install django-redis] ***********************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install openwisp2 network topology and its dependencies] ************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install extra python packages] **************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install custom OpenWISP 2 Python packages] **************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install uwsgi] ******************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install gevent] *****************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install psycopg2] ***************************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install MySQL-python] ***********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install raven (sentry client)] **************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : openwisp_users present in settings.py?] *****************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : multi-tenancy migration dumpdata] ***********************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : upload multitenancy_prepare_data.py script] *************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : prepare data for multitenancy migration] ****************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : DROP sqlite database] ***********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : DROP postgres database] *********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : CREATE postgres database] *******************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : install python-mysqldb in system python packages] *******************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : DROP mysql database] ************************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : CREATE mysql database] **********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : urls.py] ************************************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : upload generate_django_secret_key.py script] ************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : generate new django SECRET_KEY] *************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : get django SECRET_KEY] **********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : set permission to secret key file] **********************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : set secret_key fact] ************************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : settings.py] ********************************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : migrate] ************************************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : set permissions to sqlite db] ***************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : upload multitenancy_prepare_db.py script] ***************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : prepare DB for multitenancy migration] ******************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : multitenancy migration loaddata] ************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : create /opt/openwisp2] **********************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : create "/opt/openwisp2/openwisp2"] **********************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : create "/opt/openwisp2/log"] ****************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : manage.py] **********************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : celery.py] **********************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : __init__.py] ********************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : urls.py] ************************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : wsgi.py] ************************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : asgi.py] ************************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : upload generate_django_secret_key.py script] ************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : generate new django SECRET_KEY] *************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : get django SECRET_KEY] **********************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : set permission to secret key file] **********************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : set secret_key fact] ************************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : settings.py] ********************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : migrate] ************************************************************************
+ [WARNING]: Unable to use /var/www/.ansible/tmp as temporary directory, failing back to system: [Errno 13]
+Permission denied: '/var/www/.ansible'
+
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : set permissions to sqlite db] ***************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : set permissions to "/opt/openwisp2/static"] *************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : collectstatic] ******************************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : create load_initial_data.py script] *********************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : load initial data] **************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : uwsgi.ini] **********************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : supervisor uwsgi] ***************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : supervisor daphne] **************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : supervisor celery] **************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Remove supervisor runworker.conf (obsolete)] ************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : create "/opt/openwisp2/public_html"] ********************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : create "/opt/openwisp2/ssl"] ****************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : create SSL cert if not exists yet] **********************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : disable default nginx configuration] ********************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : nginx site available] ***********************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : nginx site enabled] *************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install topology update cron] ***************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install topology snapshot save cron] ********************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install clearsessions cronjob] **************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Change superuser password hint] *************************************************
+ok: [openwisp2.openwrt.lab] => {
+    "msg": "Change your admin password at https://openwisp2.openwrt.lab/admin/password_change/"
+}
+
+RUNNING HANDLER [Stouts.postfix : postfix restart] *********************************************************
+changed: [openwisp2.openwrt.lab]
+
+RUNNING HANDLER [Stouts.postfix : postfix send test mail] **************************************************
+skipping: [openwisp2.openwrt.lab]
+
+RUNNING HANDLER [openwisp.openwisp2 : reload systemd] ******************************************************
+skipping: [openwisp2.openwrt.lab]
+
+RUNNING HANDLER [openwisp.openwisp2 : reload supervisor] ***************************************************
+changed: [openwisp2.openwrt.lab]
+
+RUNNING HANDLER [openwisp.openwisp2 : restart nginx] *******************************************************
+changed: [openwisp2.openwrt.lab]
+
+RUNNING HANDLER [openwisp.openwisp2 : start redis] *********************************************************
+ok: [openwisp2.openwrt.lab]
+
+PLAY RECAP *************************************************************************************************
+openwisp2.openwrt.lab      : ok=70   changed=50   unreachable=0    failed=0

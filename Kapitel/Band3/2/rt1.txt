@@ -1,0 +1,51 @@
+log file /tmp/ospf.debug.txt
+log syslog
+!
+debug ospf6 lsa unknown
+!
+password zebra
+!
+interface eth0
+!
+interface eth1
+ bandwidth 1000000
+ ipv6 ospf6 passive
+ ipv6 ospf6 network broadcast
+!
+interface eth2
+ bandwidth 34000
+ ip ospf network point-to-point
+ ip ospf area 0.0.0.0
+ ipv6 ospf6 network point-to-point
+!
+interface eth3
+ bandwidth 10000
+ ip ospf network point-to-point
+ ip ospf authentication message-digest
+ ip ospf message-digest-key 1 md5 OPENWRT
+ ipv6 ospf6 network point-to-point
+!
+interface lo
+!
+router ospf
+ ospf router-id 1.1.1.1
+ network 10.1.1.0/24 area 0.0.0.1
+ network 192.0.2.0/24 area 0.0.0.0
+ network 198.51.100.0/24 area 0.0.0.0
+!
+router ospf6
+ router-id 1.1.1.1
+ interface eth2 area 0.0.0.0
+ interface eth3 area 0.0.0.0
+ interface eth1 area 0.0.0.1
+!
+access-list vty permit 127.0.0.0/8
+access-list vty deny any
+!
+ip forwarding
+ipv6 forwarding
+!
+line vty
+ access-class vty
+!
+end

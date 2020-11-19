@@ -1,0 +1,66 @@
+#!/bin/sh
+ 
+# this script is based on:
+# https://git.netfilter.org/conntrack-tools/plain/doc/sync/primary-backup.sh
+
+CONNTRACKD_BIN=/usr/sbin/conntrackd
+CONNTRACKD_LOCK=/tmp/lock/conntrack.lock
+
+case "$ACTION" in
+  NOTIFY_MASTER)
+    # commit the external cache into the kernel table
+    $CONNTRACKD_BIN -c
+
+    # flush the internal and the external caches
+    $CONNTRACKD_BIN -f
+
+    # resynchronize my internal cache to the kernel table
+    $CONNTRACKD_BIN -R
+
+    # send a bulk update to backups
+    $CONNTRACKD_BIN -B
+    ;;
+
+  NOTIFY_BACKUP)
+    # is conntrackd running? request some statistics to check it
+    $CONNTRACKD_BIN -s
+    if [ $? -eq 1 ] ; then
+      # something's wrong, do we have a lock file?
+      if [ -f $CONNTRACKD_LOCK ] ; then
+        logger "WARNING: conntrackd was not cleanly stopped."
+        rm -f $CONNTRACKD_LOCK
+      fi
+
+      /etc/init.d/conntrackd start
+      if [ $? -eq 1 ] ; then
+        logger "ERROR: cannot launch conntrackd"
+        exit 1
+      fi
+    fi
+
+    # shorten kernel conntrack timers to remove the zombie entries.
+    $CONNTRACKD_BIN -t
+
+    # request resynchronization with master firewall replica (if any)
+    $CONNTRACKD_BIN -n
+    ;;
+
+  NOTIFY_FAULT)
+    # shorten kernel conntrack timers to remove the zombie entries.
+    $CONNTRACKD_BIN -t
+    ;;
+
+  NOTIFY_STOP)
+    logger -t keepalived.user "keepalived was stopped on purpose"
+    ;;
+
+  NOTIFY)
+    ;;
+
+  *)
+    logger "ERROR: unknown state transition ($ACTION)"
+    exit 1
+    ;;
+esac
+
+exit 0
