@@ -1,1 +1,1 @@
-# Hochverfügbarkeit
+# Hochverf&uuml;gbarkeit
