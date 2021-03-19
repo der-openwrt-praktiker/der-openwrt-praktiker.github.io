@@ -1,0 +1,30 @@
+--- /etc/init.d/racoon.dist     2020-11-16 21:45:44.820002289 +0100
++++ /etc/init.d/racoon  2020-11-16 22:14:36.340003946 +0100
+@@ -249,7 +251,7 @@
+   fi
+
+   if [ "$remote" = "anonymous" ]; then
+-    echo "user_fqdn;" >> $conf
++    echo "user_fqdn \"*\";" >> $conf
+   else
+     config_get data "$1" peer_id_type "asn1dn"
+     echo -n "$data" >> $conf
+@@ -354,12 +356,14 @@
+   test "$data" = "0" && return 0
+
+   config_get remote "$1" remote
+-  data=$(nslookup "$remote" | awk 'NR == 5 {print $3}')
+-  test -n "$data" && remote="$data"
++  if [ "$remote" != "anonymous" ]; then
++    data=$(nslookup "$remote" | awk 'NR == 5 {print $3}')
++    test -n "$data" && remote="$data"
+
+-  config_get data "$1" username ""
+-  if [ -z "$data" ]; then
+-    config_list_foreach "$1" sainfo destroy_sa $remote
++    config_get data "$1" username ""
++    if [ -z "$data" ]; then
++      config_list_foreach "$1" sainfo destroy_sa $remote
++    fi
+   fi
+ }
