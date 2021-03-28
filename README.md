@@ -4,11 +4,11 @@ OpenWrt ist *die* Linux-Distribution f&uuml;r Netzwerkger&auml;te. Sie befreit &
 
 __Band 1 ist erh&auml;ltlich seit August 2020 als E-Book oder gedrucktes Buch.__
 
-__Band 2 ist erh&auml;ltlich seit Oktober 2020 als gedrucktes Buch.__
+__Band 2 ist erh&auml;ltlich seit Oktober 2020 als E-Book oder gedrucktes Buch.__
 
-__Band 3 ist erh&auml;ltlich seit November 2020 als gedrucktes Buch.__
+__Band 3 ist erh&auml;ltlich seit November 2020 als E-Book oder gedrucktes Buch.__
 
-__Band 4 ist erh&auml;ltlich ab April 2021.__
+__Band 4 ist erh&auml;ltlich seit M&auml;rz 2021 als gedrucktes Buch.__
 
 
 Ein Blick ins [Inhaltsverzeichnis](Inhaltsverzeichnis.md).
@@ -44,8 +44,7 @@ Fast alle Kapitel benutzen denselben Netzaufbau und diegleichen IPv4/IPv6-Adress
 
 * Das [Korrekturverzeichnis](errata.pdf) listet die inhaltlichen Fehler und ihre Verbesserung.
 
-* Buch kaufen bei Amazon ([Band 1](https://www.amazon.de/dp/3751980997), [Band 2](https://www.amazon.de/OpenWrt-Praktiker-Fortgeschritten-Band-2/dp/3752610743), [Band 3](https://www.amazon.de/OpenWrt-Praktiker-Anwendungsf%C3%A4lle-Band-3/dp/3752668776)) oder BoD ([Band 1](https://www.bod.de/buchshop/der-openwrt-praktiker-markus-stubbig-9783751980999), [Band 2](https://www.bod.de/buchshop/der-openwrt-praktiker-markus-stubbig-9783752610741), [Band 3](https://www.bod.de/buchshop/der-openwrt-praktiker-markus-stubbig-9783752668773))
-
+* Buch kaufen bei Amazon ([Band 1](https://www.amazon.de/dp/3751980997), [Band 2](https://www.amazon.de/OpenWrt-Praktiker-Fortgeschritten-Band-2/dp/3752610743), [Band 3](https://www.amazon.de/OpenWrt-Praktiker-Anwendungsf%C3%A4lle-Band-3/dp/3752668776), [Band 4](https://www.amazon.de/OpenWrt-Praktiker-VPN-Band-4/dp/3753460052)) oder BoD ([Band 1](https://www.bod.de/buchshop/der-openwrt-praktiker-markus-stubbig-9783751980999?utm_source=saleswidget&utm_medium=referral&utm_campaign=saleswidget_button), [Band 2](https://www.bod.de/buchshop/der-openwrt-praktiker-markus-stubbig-9783752610741?utm_source=saleswidget&utm_medium=referral&utm_campaign=saleswidget_button), [Band 3](https://www.bod.de/buchshop/der-openwrt-praktiker-markus-stubbig-9783752668773?utm_source=saleswidget&utm_medium=referral&utm_campaign=saleswidget_button), [Band 4](https://www.bod.de/buchshop/der-openwrt-praktiker-markus-stubbig-9783753460055?utm_source=saleswidget&utm_medium=referral&utm_campaign=saleswidget_large))
 
 * Kontakt zum Autor per [E-Mail](mailto:der.openwrt.praktiker@gmail.com)
 
