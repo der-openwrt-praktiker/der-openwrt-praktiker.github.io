@@ -1,0 +1,187 @@
+version 15.7
+no service pad
+no service timestamps debug uptime
+no service timestamps log uptime
+no service password-encryption
+service udp-small-servers
+service tcp-small-servers
+service sequence-numbers
+!
+hostname RT-6
+!
+boot-start-marker
+boot system flash c860-universalk9-mz.157-3.M6.bin
+boot-end-marker
+!
+!
+no logging message-counter syslog
+enable secret 5 $1$6Vn$0ru/taeTVwCmT2fPdty.
+!
+aaa new-model
+!
+!
+aaa authentication login MGMT local
+aaa authentication login WEBVPN local
+aaa authentication enable default none
+aaa authorization exec MGMT local if-authenticated
+!
+!
+!
+!
+!
+aaa session-id common
+memory-size iomem 10
+clock timezone MEZ 2 0
+!
+crypto pki trustpoint WEBVPN
+ enrollment selfsigned
+ serial-number
+ subject-name CN=rt4.openwrt.lab
+ subject-alt-name rt4.openwrt.lab
+ revocation-check crl
+ rsakeypair my-rsa-keys
+!
+!
+crypto pki certificate chain WEBVPN
+ certificate self-signed 01
+  30820283 308201EC A0030201 02020101 300D0609 2A864886 F70D0101 05050030
+  4F311830 16060355 0403130F 7274342E 6F70656E 7772742E 6C616231 33301206
+  03550405 130B4643 5A313331 32393241 55301D06 092A8648 86F70D01 09021610
+  52542D36 2E657861 6D706C65 2E6E6574 301E170D 31333032 32373130 34333135
+  5A170D33 30303130 31303030 3030305A 304F3118 30160603 55040313 0F727434
+  2E6F7065 6E777274 2E6C6162 31333012 06035504 05130B46 435A3133 31323932
+  4155301D 06092A86 4886F70D 01090216 1052542D 362E6578 616D706C 652E6E65
+  7430819F 300D0609 2A864886 F70D0101 01050003 818D0030 81890281 8100B7EF
+  A88B41E8 F5379114 F4008363 F9BEE6A0 735E01A9 F5B6E17A 53024ECB 6A240454
+  9AE613A3 4FE14CFE 207AD0B3 62151ED2 43A72A8E 85022DEA BB1FCE9C 29EE4535
+  4CAD08D9 18C8EF9B E3A71F5C D12210FA 4ED0BE91 B8ACE747 316B0C6C 148DDE0B
+  90519FA0 87E67CA2 D464D925 7C0C3057 A55A2571 49EA52F7 A0FC8AA1 48F50203
+  010001A3 6F306D30 0F060355 1D130101 FF040530 030101FF 301A0603 551D1104
+  13301182 0F727434 2E6F7065 6E777274 2E6C6162 301F0603 551D2304 18301680
+  14ED36D1 C3591038 4FBD464E 297B3523 D731F235 1E301D06 03551D0E 04160414
+  ED36D1C3 5910384F BD464E29 7B3523D7 31F2351E 300D0609 2A864886 F70D0101
+  05050003 81810013 58FC3942 32DEC470 A45B1F0F 1302EF5B 69961D09 C43B7ADE
+  8810EE8B 5B6FB823 18A01F52 687FE520 CCC83B05 90021F70 6747774D 1161F554
+  B5479A87 0B132E94 10906BE4 39D32405 4DC6667D 73BE5270 B28F5493 D8B924FA
+  C7226B5D 2C1F9E39 24C3F396 9FB81E6B E567FEE5 1D48E44E 55316230 44DB4C92
+  E142FE4B 5499CD
+        quit
+!
+!
+!
+!
+!
+!
+ip domain name example.net
+ip name-server 10.5.1.250
+ip cef
+no ipv6 cef
+!
+!
+license udi pid CISCO861-K9 sn FCZ131292AU
+!
+!
+archive
+ log config
+  hidekeys
+username admin privilege 15 secret 5 $1$ajRp$dl8OAhs.N99JfFD4Ab/
+!
+crypto vpn anyconnect flash:/webvpn/anyconnect-win-4.7.01076-webdeploy-k9.pkg sequence 1
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback4
+ ip address 10.4.2.86 255.255.255.255
+!
+interface FastEthernet0
+ no ip address
+!
+interface FastEthernet1
+ no ip address
+!
+interface FastEthernet2
+ no ip address
+!
+interface FastEthernet3
+ no ip address
+!
+interface FastEthernet4
+ description mgmt
+ ip address 10.5.1.86 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface Vlan1
+ no ip address
+!
+ip local pool WEBVPN 10.4.2.10 10.4.2.79
+ip forward-protocol nd
+no ip http server
+ip http authentication local
+no ip http secure-server
+!
+ip route 0.0.0.0 0.0.0.0 10.5.1.250
+ip ssh version 2
+ip scp server enable
+!
+snmp-server community public RO
+snmp-server community private RW
+!
+!
+!
+line con 0
+ no modem enable
+line aux 0
+line vty 0 4
+ authorization exec MGMT
+ login authentication MGMT
+ transport input telnet ssh
+line vty 5 15
+ authorization exec MGMT
+ login authentication MGMT
+ transport input telnet ssh
+!
+scheduler max-task-time 5000
+ntp server 10.5.1.250
+!
+!
+webvpn gateway Cisco-WebVPN-Gateway
+ ip address 10.5.1.86 port 443
+ http-redirect port 80
+ ssl encryption aes128-sha1
+ ssl trustpoint WEBVPN
+ inservice
+ !
+webvpn context Cisco-WebVPN-Gateway
+ title "Cisco WebVPN / openwrt.lab"
+ !
+ acl "ssl-acl"
+   permit ip 10.4.1.0 255.255.255.0 10.4.1.0 255.255.255.0
+ aaa authentication list WEBVPN
+ gateway Cisco-WebVPN-Gateway
+ max-users 100
+ !
+ ssl authenticate verify all
+ !
+ url-list "rewrite"
+ inservice
+ !
+ policy group WEBVPNPOLICY
+   functions svc-enabled
+   filter tunnel ssl-acl
+   svc address-pool "WEBVPN" netmask 255.255.255.0
+   svc rekey method new-tunnel
+   svc split include 10.4.1.0 255.255.255.0
+   svc dtls
+ default-group-policy WEBVPNPOLICY
+!
+end

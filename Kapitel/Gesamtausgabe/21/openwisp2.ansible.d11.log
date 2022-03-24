@@ -1,0 +1,134 @@
+root@labsrv:~# ansible-playbook playbook.yml
+PLAY [openwisp2] ****************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : include_tasks] *******************************************************************
+included: /root/.ansible/roles/Stouts.postfix/tasks/postfix.yml for openwisp2.openwrt.lab
+
+TASK [Stouts.postfix : Install requirements (Debian)] ***************************************************
+[DEPRECATION WARNING]: Invoking "apt" only once while using a loop via squash_actions is deprecated.
+Instead of using a loop to supply multiple items and specifying `name: "{{item}}"`, please use `name:
+['postfix', 'ca-certificates', 'mailutils', 'libsasl2-modules']` and remove the loop. This feature will
+be removed from ansible-base in version 2.11. Deprecation warnings can be disabled by setting
+deprecation_warnings=False in ansible.cfg.
+changed: [openwisp2.openwrt.lab] => (item=['postfix', 'ca-certificates', 'mailutils', 'libsasl2-modules'])
+
+TASK [Stouts.postfix : Install DKIM requirements (Debian)] **********************************************
+[DEPRECATION WARNING]: Invoking "apt" only once while using a loop via squash_actions is deprecated.
+Instead of using a loop to supply multiple items and specifying `name: "{{item}}"`, please use `name:
+['opendkim', 'opendkim-tools']` and remove the loop. This feature will be removed from ansible-base in
+version 2.11. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+skipping: [openwisp2.openwrt.lab] => (item=[])
+
+TASK [Stouts.postfix : Install postfix-pcre] ************************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Install requirements (RedHat)] ***************************************************
+skipping: [openwisp2.openwrt.lab] => (item=postfix)
+skipping: [openwisp2.openwrt.lab] => (item=ca-certificates)
+skipping: [openwisp2.openwrt.lab] => (item=mailx)
+skipping: [openwisp2.openwrt.lab] => (item=libselinux-python)
+
+TASK [Stouts.postfix : Install DKIM requirements (RedHat)] **********************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : create self-signed SSL cert] *****************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : set permissions for self-signed SSL cert] ****************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : set permissions for self-signed SSL key] *****************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Create DKIM directories] *********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Create DKIM directories] *********************************************************
+skipping: [openwisp2.openwrt.lab] => (item=openwisp2.openwrt.lab)
+
+TASK [Stouts.postfix : Generate DKIM key] ***************************************************************
+skipping: [openwisp2.openwrt.lab] => (item=openwisp2.openwrt.lab)
+
+TASK [Stouts.postfix : Change DKIM key permissions] *****************************************************
+skipping: [openwisp2.openwrt.lab] => (item=openwisp2.openwrt.lab)
+
+TASK [Stouts.postfix : Configure opendkim pt. 1] ********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure opendkim pt. 2] ********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure opendkim pt. 3] ********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure opendkim pt. 4] ********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure opendkim pt. 5] ********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Ensure /etc/postfix directory is owned by root user] *****************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure postfix pt. 1] *********************************************************
+changed: [openwisp2.openwrt.lab] => (item=main.cf)
+changed: [openwisp2.openwrt.lab] => (item=master.cf)
+
+TASK [Stouts.postfix : Configure postfix pt. 2] *********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure postfix pt. 3] *********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure postfix pt. 4] *********************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure postfix pt. 5] *********************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure postfix pt. 6] *********************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure postfix local user relay] **********************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure postfix sender canonical maps] *****************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure SystemD] ***************************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Ensure Postfix service is enabled (systemd)] *************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Ensure Postfix is started] *******************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Set spatialite_path (Ubuntu >= 18.04 or Debian >= 10)] ***********************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Update APT package cache] ****************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install system packages] *****************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install redis 6 if available] ************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install redis 5 if available] ************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install redis 4 (fallback)] **************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : set redis to listen on ipv4] *************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : start redis] *****************************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install geographic libraries] ************************************************

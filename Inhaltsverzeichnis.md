@@ -1,6 +1,6 @@
 # Inhaltsverzeichnis
 
-## Band 1: Grundlagen
+## Teil 1: Grundlagen
 
 #### Quickstart
 * Was ist OpenWrt?
@@ -68,20 +68,8 @@
 * Durchsatz messen
 * SSH-Login ohne Passworteingabe
 
-#### Literaturverzeichnis
 
-#### Stichwortverzeichnis
-
-
-### Anhang
-
-#### A. Editor unter Linux
-
-#### B. Zusatzmaterial
-
-
-
-## Band 2: Fortgeschritten
+## Teil 2: Fortgeschritten
 
 #### Firewall
 * OpenWrt als Firewall
@@ -137,17 +125,12 @@
 
 #### Cloud
 * Logging as a Service
-* Backup
-* Google Drive
+* Backup mit Dropbox und Google Drive
+* Verwaltung mit OpenWISP und Ansible
 * Zusammenfassung
 
-#### Literaturverzeichnis
 
-#### Stichwortverzeichnis
-
-
-
-## Band 3: Anwendungsfälle
+## Teil 3: Anwendungsfälle
 
 #### Mesh-WLAN
 * Grundlagen
@@ -200,6 +183,7 @@
 * Administration
 * Fehlersuche
 * Benutzerverwaltung
+* Cloud
 * Technischer Hintergrund
 * Ausblick
 * Zusammenfassung
@@ -234,13 +218,8 @@
 * Technischer Hintergrund
 * Zusammenfassung
 
-#### Literaturverzeichnis
 
-#### Stichwortverzeichnis
-
-
-
-## Band 4: VPN
+## Teil 4: VPN
 
 #### IPsec
 * Sicherheit
@@ -308,36 +287,12 @@
 * Technischer Hintergrund
 * Zusammenfassung
 
-#### IPsec-Tools
-* Laboraufbau
-* Installation
-* Roadwarrior
-* Steuerung
-* Site-to-Site
-* IPv6
-* Fehlersuche
-* Ausblick
-* Zusammenfassung
-
 #### GRE
 * Labornetz
 * Einrichtung
 * Firewall
 * Routing
 * IPv6
-* Zusammenfassung
-
-#### Multipunkt-VPN
-* Einleitung
-* Dynamischer Multipunkt VPN
-* Anforderung
-* Labornetz
-* Einrichtung
-* Fehlersuche
-* Adressumsetzung
-* IPv6
-* Kompatibilität
-* Ausblick
 * Zusammenfassung
 
 #### DNS-Tunnel
@@ -366,3 +321,9 @@
 #### Literaturverzeichnis
 
 #### Stichwortverzeichnis
+
+### Anhang
+
+#### A. Editor unter Linux
+
+#### B. Zusatzmaterial
