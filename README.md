@@ -2,6 +2,10 @@
 
 OpenWrt ist eine Linux-Distribution f&uuml;r Netzwerkger&auml;te. Sie befreit &uuml;ber eintausend verschiedene Router, Switches und Accesspoints von ihrem vorinstallierten Betriebssystem und bietet eine breite Palette an Anwendungen unter einer einheitlichen Weboberfl&auml;che.
 
+__Die aktualisierte Gesamtausgabe ist geplant f&uuml;r Mai 2024.__
+
+Die Gesamtausgabe ist erh&auml;tlich seit M&auml;rz 2022.
+
 Band 1 ist erh&auml;ltlich seit August 2020 als E-Book und gedrucktes Buch.
 
 Band 2 ist erh&auml;ltlich seit Oktober 2020 als E-Book und gedrucktes Buch.
@@ -10,7 +14,6 @@ Band 3 ist erh&auml;ltlich seit November 2020 als E-Book und gedrucktes Buch.
 
 Band 4 ist erh&auml;ltlich seit M&auml;rz 2021 als E-Book und gedrucktes Buch.
 
-__Die aktualisierte Gesamtausgabe ist erh&auml;tlich seit M&auml;rz 2022.__
 
 
 Ein Blick ins [Inhaltsverzeichnis](Inhaltsverzeichnis.md).
