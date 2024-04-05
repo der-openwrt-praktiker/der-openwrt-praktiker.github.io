@@ -39,7 +39,7 @@
 
 #### Drahtlos
 * Ad-Hoc
-* Accesspoint
+* Access-Point
 * Client
 * Monitor
 * Mesh
@@ -118,7 +118,7 @@
 * Software
 * Zusammenfassung
 
-#### OpenWrt selber bauen
+#### OpenWrt selbst bauen
 * Vorbereitung
 * OpenWrt kompilieren
 * Zusammenfassung
@@ -192,7 +192,7 @@
 * Aufbau
 * Varianten
 * Adblock
-* Simple AdBlock
+* AdBlock-Fast
 * AdGuard Home
 * Nutzung
 * Updates
@@ -230,7 +230,7 @@
 * Dead Peer Detection
 * IPv6
 * Tunnel-Interface
-* Sicherheit
+* Authentifizierung
 * Fehlersuche
 * Ausblick
 * Technischer Hintergrund
@@ -283,7 +283,7 @@
 * Routing
 * ZeroTier als Switch
 * Firewall
-* ZeroTier selber hosten
+* ZeroTier selbst hosten
 * Technischer Hintergrund
 * Zusammenfassung
 
