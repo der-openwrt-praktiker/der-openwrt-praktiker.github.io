@@ -1,4 +1,4 @@
-frr version 7.5
+frr version 8.5.1
 frr defaults traditional
 hostname RT-4
 log syslog
@@ -7,28 +7,35 @@ password zebra
 !
 interface eth2
  bandwidth 155
+ ipv6 ospf6 area 0
  ipv6 ospf6 network broadcast
  ipv6 ospf6 priority 0
+exit
 !
 interface eth3
  bandwidth 10
+ ip ospf dead-interval 20
+ ip ospf hello-interval 5
  ip ospf network point-to-point
+ ipv6 ospf6 area 0
  ipv6 ospf6 network point-to-point
+exit
 !
 router ospf
  ospf router-id 4.4.4.4
- network 192.0.2.0/24 area 0.0.0.0
- network 203.0.113.0/24 area 0.0.0.0
+ network 192.0.2.0/24 area 0
+ network 203.0.113.0/24 area 0
+exit
 !
 router ospf6
  ospf6 router-id 4.4.4.4
- interface eth2 area 0.0.0.0
- interface eth3 area 0.0.0.0
+exit
 !
 access-list vty seq 5 permit 127.0.0.0/8
 access-list vty seq 10 deny any
 !
 line vty
  access-class vty
+exit
 !
 end
