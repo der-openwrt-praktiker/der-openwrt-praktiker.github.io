@@ -27,10 +27,10 @@ uci set tinc.RT2.Subnet=10.2.1.0/24
 uci set tinc.RT2.enabled=1
 uci set tinc.RT2.net=LAB
 
-# fix for tinc 1.1-git-2
+# generate keys
 mkdir -p /etc/tinc/LAB/hosts
-tinc --net=LAB generate-rsa-keys $(uci get tinc.LAB.key_size)
-cat /etc/tinc/LAB/rsa_key.pub > /etc/tinc/LAB/hosts/RT2
+tinc --net=LAB generate-ed25519-keys
+cat /etc/tinc/LAB/ed25519_key.pub > /etc/tinc/LAB/hosts/RT2
 
 # commit and start
 uci commit
@@ -53,14 +53,16 @@ uci add firewall rule
 uci set firewall.@rule[-1].name='Tinc-Traffic-IN'
 uci set firewall.@rule[-1].src='*'
 uci set firewall.@rule[-1].dest='lan'
-uci set firewall.@rule[-1].extra='--in-interface tun0'
+uci set firewall.@rule[-1].direction='in'
+uci set firewall.@rule[-1].device='tun0'
 uci set firewall.@rule[-1].target='ACCEPT'
 uci add_list firewall.@rule[-1].proto='all'
 uci add firewall rule
 uci set firewall.@rule[-1].name='Tinc-Traffic-OUT'
 uci set firewall.@rule[-1].src='lan'
 uci set firewall.@rule[-1].dest='*'
-uci set firewall.@rule[-1].extra='--out-interface tun0'
+uci set firewall.@rule[-1].direction='out'
+uci set firewall.@rule[-1].device='tun0'
 uci set firewall.@rule[-1].target='ACCEPT'
 uci add_list firewall.@rule[-1].proto='all'
 uci commit

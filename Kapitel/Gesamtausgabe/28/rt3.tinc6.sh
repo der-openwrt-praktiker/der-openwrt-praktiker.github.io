@@ -27,10 +27,10 @@ uci set tinc.RT2.Subnet=fd00:3::/64
 uci set tinc.RT3.enabled=1
 uci set tinc.RT3.net=LAB
 
-# fix for tinc 1.1-git-2
+# generate keys
 mkdir -p /etc/tinc/LAB/hosts
-tinc --net=LAB generate-rsa-keys $(uci get tinc.LAB.key_size)
-cat /etc/tinc/LAB/rsa_key.pub > /etc/tinc/LAB/hosts/RT3
+tinc --net=LAB generate-ed25519-keys
+cat /etc/tinc/LAB/ed25519_key.pub > /etc/tinc/LAB/hosts/RT3 
 
 # commit and start
 uci commit
@@ -40,11 +40,9 @@ cat /etc/tinc/LAB/hosts/RT3
 
 # allow incoming Tinc connection
 uci add firewall rule
-uci set firewall.@rule[-1].dest_port='655'
+uci set firewall.@rule[-1].name='Allow-Tinc'
 uci set firewall.@rule[-1].src='wan'
-uci set firewall.@rule[-1].name='Allow-Tinc6'
-uci set firewall.@rule[-1].family='ipv6'
-uci add_list firewall.@rule[-1].dest_ip='2001:db8:3::2/64'
+uci set firewall.@rule[-1].dest_port='655'
 uci set firewall.@rule[-1].target='ACCEPT'
 uci commit
 service firewall restart
@@ -55,14 +53,16 @@ uci add firewall rule
 uci set firewall.@rule[-1].name='Tinc-Traffic-IN'
 uci set firewall.@rule[-1].src='*'
 uci set firewall.@rule[-1].dest='lan'
-uci set firewall.@rule[-1].extra='--in-interface tun0'
+uci set firewall.@rule[-1].direction='in'
+uci set firewall.@rule[-1].device='tun0'
 uci set firewall.@rule[-1].target='ACCEPT'
 uci add_list firewall.@rule[-1].proto='all'
 uci add firewall rule
 uci set firewall.@rule[-1].name='Tinc-Traffic-OUT'
 uci set firewall.@rule[-1].src='lan'
 uci set firewall.@rule[-1].dest='*'
-uci set firewall.@rule[-1].extra='--out-interface tun0'
+uci set firewall.@rule[-1].direction='out'
+uci set firewall.@rule[-1].device='tun0'
 uci set firewall.@rule[-1].target='ACCEPT'
 uci add_list firewall.@rule[-1].proto='all'
 uci commit
