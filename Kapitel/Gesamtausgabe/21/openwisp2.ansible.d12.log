@@ -1,0 +1,599 @@
+PLAY [openwisp2] *************************************************************************************
+
+TASK [Gathering Facts] *******************************************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : include_tasks] ****************************************************************
+included: /root/.ansible/roles/Stouts.postfix/tasks/postfix.yml for openwisp2.openwrt.lab
+
+TASK [Stouts.postfix : Install requirements (Debian)] ************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Install DKIM requirements (Debian)] *******************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Install postfix-pcre] *********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Install requirements (RedHat)] ************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Install DKIM requirements (RedHat)] *******************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : create self-signed SSL cert] **************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : set permissions for self-signed SSL cert] *************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : set permissions for self-signed SSL key] **************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Create DKIM directories] ******************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Create DKIM directories] ******************************************************
+skipping: [openwisp2.openwrt.lab] => (item=openwisp2.openwrt.lab) 
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Generate DKIM key] ************************************************************
+skipping: [openwisp2.openwrt.lab] => (item=openwisp2.openwrt.lab) 
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Change DKIM key permissions] **************************************************
+skipping: [openwisp2.openwrt.lab] => (item=openwisp2.openwrt.lab) 
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure opendkim pt. 1] *****************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure opendkim pt. 2] *****************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure opendkim pt. 3] *****************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure opendkim pt. 4] *****************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure opendkim pt. 5] *****************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Ensure /etc/postfix directory is owned by root user] **************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure postfix pt. 1] ******************************************************
+changed: [openwisp2.openwrt.lab] => (item=main.cf)
+changed: [openwisp2.openwrt.lab] => (item=master.cf)
+
+TASK [Stouts.postfix : Configure postfix pt. 2] ******************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure postfix pt. 3] ******************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure postfix pt. 4] ******************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure postfix pt. 5] ******************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure postfix pt. 6] ******************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure postfix local user relay] *******************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure postfix sender canonical maps] **************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Configure SystemD] ************************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Ensure Postfix service is enabled (systemd)] **********************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [Stouts.postfix : Ensure Postfix is started] ****************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : Install gpg (update apt cache first)] **************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : Install gpg-agent (update apt cache first)] ********************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : Install logrotate] *********************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : Install system dependencies] ***********************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : Add influxdb key] **********************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : Add influxdb repo] *********************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : Install influxdb (update apt cache first)] *********************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : Set influxdb HTTP IP and port] *********************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : lineinfile] ****************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : lineinfile] ****************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : lineinfile] ****************************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : lineinfile] ****************************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : Set the index-version for influxdb] ****************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : lineinfile] ****************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : lineinfile] ****************************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : Set influxdb dir permissions] **********************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : ensure influxdb is started and enabled] ************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : Disable influxdb authentication] *******************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : Restart influxdb] **********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : Wait for influxdb to restart] **********************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : Create influxdb user] ******************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : Update user password] ******************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : Enable influxdb authentication] ********************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : Restart influxdb] **********************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : Set net.core.rmem_max] *****************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : Set net.core.rmem_default] *************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.influxdb : Configure influxdb udp settings] *******************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Set spatialite_path (Ubuntu >= 18.04 or Debian >= 10)] ********************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Update APT package cache] *************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install system packages] **************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install redis] ************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : set redis to listen on ipv4] **********************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : start redis] **************************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install geographic libraries] *********************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install spatialite] *******************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install postgresql client drivers] ****************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install cairo] ************************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install mod-spatialite (may fail on older linux distros)] *****************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install acl if acting as non-root user] ***********************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : ensure supervisor is started] *********************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Check installed python version] *******************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Check openwisp2 should install python 3.7] ********************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install software-properties-common] ***************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Add deadsnakes PPA] *******************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install Python 3.7] *******************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Set python 3.7] ***********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install python3 packages] *************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install ntp] **************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install gettext] **********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install fping] ************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Create default SSH key pair] **********************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Get default private SSH key] **********************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Get default public SSH key] ***********************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Update pip & related tools] ***********************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Remove jsonfield2] ********************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install openwisp2 controller and its dependencies] ************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install channels-redis~=3.4.0] ********************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install channels-redis~=2.4.0 for redis 4 compatibility] ******************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install django-redis] *****************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install openwisp2 network topology and its dependencies] ******************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install openwisp firmware upgrader and its dependencies] ******************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install openwisp monitoring and its dependencies] *************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install openwisp2_radius and its dependencies] ****************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install extra python packages] ********************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install static minification dependencies] *********************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install uwsgi] ************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install psycopg2] *********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install MySQL-python] *****************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install raven (sentry client)] ********************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install django-celery-email] **********************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install django] ***********************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : create /opt/openwisp2] ****************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : create "/opt/openwisp2/openwisp2"] ****************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : create "/opt/openwisp2/log"] **********************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : create "/opt/openwisp2/static_custom"] ************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : manage.py] ****************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : celery.py] ****************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : __init__.py] **************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : urls.py] ******************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : wsgi.py] ******************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : asgi.py] ******************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : upload generate_django_secret_key.py script] ******************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : generate new django SECRET_KEY] *******************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : get django SECRET_KEY] ****************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : set permission to secret key file] ****************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : set secret_key fact] ******************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : settings.py] **************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : routing.py] ***************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : start redis for migration] ************************************************
+
+RUNNING HANDLER [Stouts.postfix : postfix restart] ***************************************************
+changed: [openwisp2.openwrt.lab]
+
+RUNNING HANDLER [Stouts.postfix : postfix send test mail] ********************************************
+skipping: [openwisp2.openwrt.lab]
+
+RUNNING HANDLER [openwisp.influxdb : restart influxdb] ***********************************************
+changed: [openwisp2.openwrt.lab]
+
+RUNNING HANDLER [openwisp.openwisp2 : reload systemd] ************************************************
+skipping: [openwisp2.openwrt.lab]
+
+RUNNING HANDLER [openwisp.openwisp2 : reload supervisor] *********************************************
+changed: [openwisp2.openwrt.lab]
+
+RUNNING HANDLER [openwisp.openwisp2 : remove celerybeat schedule] ************************************
+ok: [openwisp2.openwrt.lab]
+
+RUNNING HANDLER [openwisp.openwisp2 : migrate timeseries database] ***********************************
+[WARNING]: Unable to use /var/www/.ansible/tmp as temporary directory, failing back to system: [Errno
+13] Permission denied: '/var/www/.ansible'
+ok: [openwisp2.openwrt.lab]
+
+RUNNING HANDLER [openwisp.openwisp2 : start redis] ***************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : run geocoding check] ******************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : migrate] ******************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : set permissions to sqlite db] *********************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : set permissions to "/opt/openwisp2/static"] *******************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : copy static files] ********************************************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : collectstatic] ************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : set permissions to "/opt/openwisp2/env"] **********************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : compilemessages] **********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : create load_initial_data.py script] ***************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : load initial data] ********************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Check installed FreeRADIUS version] ***************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Add FreeRADIUS 3.0.x repository to sources list] **************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Add FreeRADIUS 3.2.x repository to sources list] **************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Update freeradius_dir variable] *******************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Add freeradius repository into Ubuntu focal sources list] *****************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Add freeradius repository into Ubuntu bionic sources list] ****************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Add freeradius repository into Ubuntu xenial sources list and Network RADIUS PGP public key] ***
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Add freeradius repository into Debian bullseye sources list] **************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Add freeradius repository into Debian buster sources list] ****************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Add freeradius repository into Debian stretch sources list] ***************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Add Network RADIUS PGP public key] ****************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Update and upgrade apt packages] ******************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Freeradius system packages] ***********************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Freeradius postgres packages] *********************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Freeradius mysql packages] ************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : SQL configuration] ********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Enable SQL module] ********************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Add plus sign to safe characters] *****************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : adding user 'freerad' to www-data group for database access] **************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Add Attributes to freeradius dictionary] **********************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : REST configuration] *******************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Enable REST module] *******************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Remove default site] ******************************************************
+skipping: [openwisp2.openwrt.lab] => (item=/etc/freeradius/sites-enabled/default) 
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Site configuration] *******************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Inner tunnel] *************************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : uwsgi.ini] ****************************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : supervisor uwsgi] *********************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : supervisor daphne] ********************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : supervisor celery] ********************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : supervisor celery network] ************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : supervisor celery firmware_upgrader] **************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : supervisor celery monitoring] *********************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : supervisor celerybeat] ****************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Remove supervisor runworker.conf (obsolete)] ******************************
+ok: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Set nginx max upload size] ************************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : create "/opt/openwisp2/public_html"] **************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : create "/opt/openwisp2/nginx-conf/openwisp2"] *****************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : create "/opt/openwisp2/ssl"] **********************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : create SSL cert if not exists yet] ****************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Copy SSL cert to be added to trusted Cert (for freeradius)] ***************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : disable default nginx configuration] **************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : nginx SSL configuration] **************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : nginx security configuration] *********************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : nginx site available] *****************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : nginx site enabled] *******************************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : configure nginx log rotation] *********************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : disable nginx server tokens] **********************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install topology update cron] *********************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install topology snapshot save cron] **************************************
+skipping: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Install clearsessions cronjob] ********************************************
+changed: [openwisp2.openwrt.lab]
+
+TASK [openwisp.openwisp2 : Change superuser password hint] *******************************************
+ok: [openwisp2.openwrt.lab] => {
+    "msg": "Change your admin password at https://openwisp2.openwrt.lab/admin/password_change/"
+}
+
+TASK [openwisp.openwisp2 : Update site object hint] **************************************************
+ok: [openwisp2.openwrt.lab] => {
+    "msg": "Update the default site object at https://openwisp2.openwrt.lab/admin/sites/site/1/change/"
+}
+
+RUNNING HANDLER [openwisp.openwisp2 : reload supervisor] *********************************************
+changed: [openwisp2.openwrt.lab]
+
+RUNNING HANDLER [openwisp.openwisp2 : remove celerybeat schedule] ************************************
+ok: [openwisp2.openwrt.lab]
+
+RUNNING HANDLER [openwisp.openwisp2 : migrate timeseries database] ***********************************
+ok: [openwisp2.openwrt.lab]
+
+RUNNING HANDLER [openwisp.openwisp2 : restart nginx] *************************************************
+changed: [openwisp2.openwrt.lab]
+
+RUNNING HANDLER [openwisp.openwisp2 : update-ca-certificates] ****************************************
+changed: [openwisp2.openwrt.lab]
+
+PLAY RECAP *******************************************************************************************
+openwisp2.openwrt.lab      : ok=113  changed=79   unreachable=0    failed=0    skipped=81   rescued=0    ignored=0   
