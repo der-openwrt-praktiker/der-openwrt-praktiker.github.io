@@ -29,9 +29,9 @@ Teil 1 der Gesamtausgabe __Der OpenWrt-Praktiker__ ist der ideale Begleiter f&uu
 
 Teil 2 ist für Anwender mit Vorkenntnissen konzipiert. Die Kapitel zeigen, welche M&ouml;glichkeiten OpenWrt bietet, wie die Software intern arbeitet und welche Dienste aus der Cloud eine sinnvolle Erg&auml;nzung sind.
 
-Band 3 ist für Anwender mit soliden Grundkenntnissen konzipiert. Die Kapitel behandeln Anwendungsfälle aus der Praxis und liefern die passende Lösung mit OpenWrt.
+Teil 3 ist für Anwender mit soliden Grundkenntnissen konzipiert. Die Kapitel behandeln Anwendungsfälle aus der Praxis und liefern die passende Lösung mit OpenWrt.
 
-Band 4 hat den Schwerpunkt _Virtuelle Private Netze_ und ist für Anwender mit soliden Grundkenntnissen konzipiert. Die Kapitel behandeln die M&ouml;glichkeiten von OpenWrt, ein VPN aufzubauen und zu betreiben.
+Teil 4 hat den Schwerpunkt _Virtuelle Private Netze_ und ist für Anwender mit soliden Grundkenntnissen konzipiert. Die Kapitel behandeln die M&ouml;glichkeiten von OpenWrt, ein VPN aufzubauen und zu betreiben.
 
 
 Das Buch ist f&uuml;r Linux-Admins, die vom Netzwerk mehr verstehen wollen. Und f&uuml;r Netzwerker, die Linux besser verstehen wollen. Die Kapitel sind weitgehend unabh&auml;ngig voneinander, steigern sich aber in ihrem Niveau. So sind die Themen geeignet vom Einsteiger bis zum Profi.
