@@ -1,10 +1,14 @@
 #!/bin/sh
- 
+
 # this script is based on:
 # https://git.netfilter.org/conntrack-tools/plain/doc/sync/primary-backup.sh
 
 CONNTRACKD_BIN=/usr/sbin/conntrackd
 CONNTRACKD_LOCK=/tmp/lock/conntrack.lock
+
+# Zugriff zur Telegram-API
+API_KEY="869879271:AAUEMe8wjRxZ..."
+CHAT_ID=123456789
 
 case "$ACTION" in
   NOTIFY_MASTER)
@@ -19,6 +23,9 @@ case "$ACTION" in
 
     # send a bulk update to backups
     $CONNTRACKD_BIN -B
+
+    # Nachricht für Telegram
+    MESSAGE="Failover Gruppe $NAME nach Master"
     ;;
 
   NOTIFY_BACKUP)
@@ -43,6 +50,9 @@ case "$ACTION" in
 
     # request resynchronization with master firewall replica (if any)
     $CONNTRACKD_BIN -n
+
+    # Nachricht für Telegram
+    MESSAGE="Failover Gruppe $NAME nach Backup"
     ;;
 
   NOTIFY_FAULT)
@@ -62,5 +72,10 @@ case "$ACTION" in
     exit 1
     ;;
 esac
+
+# Nachricht an Telegram senden
+/usr/bin/wget --quiet -4 \
+  --post-data="chat_id=$CHAT_ID&text=$HOSTNAME vrrp: $MESSAGE" \
+  https://api.telegram.org/bot$API_KEY/sendMessage
 
 exit 0
