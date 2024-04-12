@@ -1,8 +1,8 @@
 # Der OpenWrt-Praktiker
 
-OpenWrt ist eine Linux-Distribution f&uuml;r Netzwerkger&auml;te. Sie befreit &uuml;ber eintausend verschiedene Router, Switches und Accesspoints von ihrem vorinstallierten Betriebssystem und bietet eine breite Palette an Anwendungen unter einer einheitlichen Weboberfl&auml;che.
+OpenWrt ist eine Linux-Distribution f&uuml;r Netzwerkger&auml;te. Sie befreit &uuml;ber eintausend verschiedene Router, Switches und Access-Points von ihrem vorinstallierten Betriebssystem und bietet eine breite Palette an Anwendungen unter einer einheitlichen Weboberfl&auml;che.
 
-__Die aktualisierte Gesamtausgabe ist geplant f&uuml;r Mai 2024.__
+__Die aktualisierte Gesamtausgabe ist erh&auml;ltlich seit April 2024. Das E-Book ist geplant f&uuml;r Mai 2024.__
 
 Die Gesamtausgabe ist erh&auml;tlich seit M&auml;rz 2022.
 
@@ -49,7 +49,7 @@ Fast alle Kapitel benutzen denselben Netzaufbau und die gleichen IPv4/IPv6-Adres
 
 * Das [Korrekturverzeichnis](errata.pdf) listet die inhaltlichen Fehler und ihre Verbesserung.
 
-* Buch kaufen bei [Amazon](https://www.amazon.de/-/de/Markus-Stubbig/dp/3755709937/) oder [BoD](https://www.bod.de/buchshop/der-openwrt-praktiker-markus-stubbig-9783755709930)
+* Buch kaufen bei [Amazon](https://amzn.eu/d/h8BHbvd) oder [BoD](https://buchshop.bod.de/der-openwrt-praktiker-markus-stubbig-9783759705211)
 
 * Kontakt zum Autor per [E-Mail](mailto:der.openwrt.praktiker@gmail.com)
 
